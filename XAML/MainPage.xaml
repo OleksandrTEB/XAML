@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XAML.MainPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" x:Name="div">
+            <Label Text="Procesor" FontSize="30" HorizontalOptions="Center" />
+
+            <Image Source="amd.png"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a submarine number ten" />
+
+            <Label Text="Typ procesora: AMD Ryzen 9" FontSize="30" TextColor="#FFFFFF" />
+            <Label Text="Model procesora: Ryzen 9 3900" FontSize="30" TextColor="#FFFFFF" />
+
+
+            <Label Text="Cena: 499 zł" FontSize="30" TextColor="Gray" />
+
+            <Label x:Name="label1" Text="Nic nie wybrano" FontSize="30" />
+            <Button x:Name="button1" Text="Click" FontSize="30" Clicked="PokarzClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
