@@ -2,25 +2,77 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XAML.MainPage">
-    <ScrollView>
-        <VerticalStackLayout Padding="16" x:Name="div">
-            <Label Text="Procesor" FontSize="30" HorizontalOptions="Center" />
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-            <Image Source="amd.png"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a submarine number ten" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-            <Label Text="Typ procesora: AMD Ryzen 9" FontSize="30" TextColor="#FFFFFF" />
-            <Label Text="Model procesora: Ryzen 9 3900" FontSize="30" TextColor="#FFFFFF" />
+        <Label
+        Grid.Row="0"
+        Grid.Column="0"
+        Grid.ColumnSpan="2"
+        Text="Procesor"
+        FontSize="30"
+        HorizontalOptions="Center" />
+
+        <Image Grid.Row="1"
+           Grid.Column="0"
+           Grid.ColumnSpan="2"
+           Source="amd.png"
+           Aspect="AspectFit"
+           SemanticProperties.Description="dot net bot in a submarine number ten" />
+
+        <Label Grid.Row="2"
+           Grid.Column="0"
+           Grid.ColumnSpan="2"
+           Text="Typ procesora: AMD Ryzen 9"
+           FontSize="30"
+           TextColor="#FFFFFF" />
+
+        <Label Grid.Row="3"
+        Grid.Column="0"
+        Grid.ColumnSpan="2"
+        Text="Model procesora: Ryzen 9 3900"
+        FontSize="30"
+        TextColor="#FFFFFF" />
 
 
-            <Label Text="Cena: 499 zł" FontSize="30" TextColor="Gray" />
+        <Label  Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="Cena: 499 zł"
+            FontSize="30"
+            TextColor="Gray" />
 
-            <Label x:Name="label1" Text="Nic nie wybrano" FontSize="30" />
-            <HorizontalStackLayout Spacing="10">
-                <Button x:Name="button1" Text="Click" FontSize="30" Clicked="PokarzClicked" />
-                <Button Text="Text" FontSize="30" />
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
-    </ScrollView>
+        <Label  Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            x:Name="label1"
+            Text="Nic nie wybrano"
+            FontSize="30" />
+
+
+        <Button Grid.Row="6"
+            Grid.Column="0"
+            x:Name="button1"
+            Text="Click"
+            FontSize="30"
+            Clicked="PokarzClicked" />
+
+        <Button Grid.Row="6"
+            Grid.Column="1"
+            Text="Text"
+            FontSize="30" />
+    </Grid>
 </ContentPage>
