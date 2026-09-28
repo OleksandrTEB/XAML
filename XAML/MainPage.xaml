@@ -17,7 +17,10 @@
             <Label Text="Cena: 499 zł" FontSize="30" TextColor="Gray" />
 
             <Label x:Name="label1" Text="Nic nie wybrano" FontSize="30" />
-            <Button x:Name="button1" Text="Click" FontSize="30" Clicked="PokarzClicked" />
+            <HorizontalStackLayout Spacing="10">
+                <Button x:Name="button1" Text="Click" FontSize="30" Clicked="PokarzClicked" />
+                <Button Text="Text" FontSize="30" />
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
