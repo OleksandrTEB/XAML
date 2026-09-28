@@ -5,6 +5,7 @@
     <Grid Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -19,43 +20,42 @@
         </Grid.ColumnDefinitions>
 
         <Label
-        Grid.Row="0"
+        Grid.Row="1"
         Grid.Column="0"
         Grid.ColumnSpan="2"
         Text="Procesor"
         FontSize="30"
         HorizontalOptions="Center" />
 
-        <Image Grid.Row="1"
+        <Image Grid.Row="2"
            Grid.Column="0"
            Grid.ColumnSpan="2"
            Source="amd.png"
            Aspect="AspectFit"
            SemanticProperties.Description="dot net bot in a submarine number ten" />
 
-        <Label Grid.Row="2"
-           Grid.Column="0"
-           Grid.ColumnSpan="2"
-           Text="Typ procesora: AMD Ryzen 9"
-           FontSize="30"
-           TextColor="#FFFFFF" />
-
         <Label Grid.Row="3"
-        Grid.Column="0"
-        Grid.ColumnSpan="2"
-        Text="Model procesora: Ryzen 9 3900"
-        FontSize="30"
-        TextColor="#FFFFFF" />
-
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Text="Typ procesora: AMD Ryzen 9"
+               FontSize="30"
+               TextColor="#FFFFFF" />
 
         <Label  Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Text="Model procesora: Ryzen 9 3900"
+                FontSize="30"
+                TextColor="#FFFFFF" />
+
+        <Label  Grid.Row="5"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Text="Cena: 499 zł"
             FontSize="30"
             TextColor="Gray" />
 
-        <Label  Grid.Row="5"
+        <Label  Grid.Row="6"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             x:Name="label1"
@@ -63,16 +63,32 @@
             FontSize="30" />
 
 
-        <Button Grid.Row="6"
+        <Button Grid.Row="7"
             Grid.Column="0"
             x:Name="button1"
             Text="Click"
             FontSize="30"
             Clicked="PokarzClicked" />
 
-        <Button Grid.Row="6"
+        <Button Grid.Row="7"
             Grid.Column="1"
             Text="Text"
             FontSize="30" />
+
+        <FlexLayout
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Wrap="Wrap"
+            JustifyContent="Start"
+            Padding="10">
+            
+            <Button Text="Procesory"/>
+            <Button Text="RAM"/>
+            <Button Text="Keyboard"/>
+            <Button Text="Mouse"/>
+            <Button Text="Memory SSD"/>
+            <Button Text="Display"/>
+        </FlexLayout>
     </Grid>
 </ContentPage>
