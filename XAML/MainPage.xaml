@@ -30,7 +30,7 @@
         <Image Grid.Row="2"
            Grid.Column="0"
            Grid.ColumnSpan="2"
-           Source="amd.png"
+           Source="dotnet_bot.png"
            Aspect="AspectFit"
            SemanticProperties.Description="dot net bot in a submarine number ten" />
 
