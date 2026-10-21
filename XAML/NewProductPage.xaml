@@ -21,34 +21,58 @@
             Grid.Row="0"
             Grid.Column="0"
             Text="Nowy produkt"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center" />
 
-        <Label
-            Grid.Row="1"
-            Grid.Column="0"
-            Text="Nazwa"
-            Margin="0,0,0,10"/>
-        
-        <Entry
-            Margin="0,15,0,0"
-            Grid.Row="1"
-            Grid.Column="0"
-            x:Name="NazwaEntry"
-            Placeholder="Wpisz nazwę produktu"/>
+        <VerticalStackLayout Grid.Row="1" Grid.Column="0" Spacing="10" Margin="0,0,0,10">
+            <Label
+                Text="Nazwa" />
 
-        <Label
-            Margin="0,15,0,0"
-            Grid.Row="2"
+            <Entry
+                HeightRequest="50"
+                x:Name="NazwaEntry"
+                Placeholder="Wpisz nazwę produktu" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2" Grid.Column="0" Spacing="10" Margin="0,0,0,10">
+            <Label
+                Text="Cena" />
+            
+            <Entry
+                HeightRequest="50"
+                x:Name="Cena"
+                Placeholder="0"
+                Keyboard="Numeric" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="3" Grid.Column="0" Spacing="10" Margin="0,0,0,10">
+            <Label
+                Text="Kategoria" />
+
+            <Picker x:Name="KategoriaPicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Procesory</x:String>
+                        <x:String>Płyte główne</x:String>
+                        <x:String>Telifony</x:String>
+                        <x:String>Karty Graficzne</x:String>
+                        <x:String>Dyski SSD</x:String>
+                        <x:String>Pamięci RAM</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </VerticalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="4" Grid.Column="0">
+            <Switch x:Name="AwaliableSwtich" HeightRequest="50" />
+            <Label Text="Produkt dostępny" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <Button
+            Text="Dodaj produkt"
+            Grid.Row="5"
             Grid.Column="0"
-            Text="Cena"
-            />
-        <Entry
-            Margin="0,15,15,15"
-            Grid.Row="2"
-            Grid.Column="0"
-            x:Name="Cena"
-            Placeholder="0"
-            Keyboard="Numeric"/>
+            VerticalOptions="End"
+            HeightRequest="50" />
     </Grid>
    
     
