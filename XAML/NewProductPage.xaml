@@ -3,79 +3,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XAML.NewProductPage"
              Title="NewProductPage">
-    <Grid>
+    <Grid Padding="20">
+        <!-- Definicja wierszy sietki grid -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
+        <!-- Nagluwek -->
         <Label
             Grid.Row="0"
-            Grid.Column="0"
             Text="Nowy produkt"
             HorizontalOptions="Center" />
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="0" Spacing="10" Margin="0,0,0,10">
-            <Label
-                Text="Nazwa" />
+        <VerticalStackLayout Grid.Row="1" Spacing="16">
 
-            <Entry
-                HeightRequest="50"
-                x:Name="NazwaEntry"
-                Placeholder="Wpisz nazwę produktu" />
+            <!-- Entry nazwa -->
+            <VerticalStackLayout Spacing="8">
+                <Label
+                    Text="Nazwa" />
+
+                <Entry
+                    x:Name="Nazwa"
+                    HeightRequest="45"
+                    Placeholder="Wpisz nazwę produktu" />
+            </VerticalStackLayout>
+
+            <!-- Entry cena -->
+            <VerticalStackLayout Spacing="8">
+                <Label
+                    Text="Cena" />
+
+                <Entry
+                    x:Name="Cena"
+                    HeightRequest="45"
+                    Placeholder="0"
+                    Keyboard="Numeric" />
+            </VerticalStackLayout>
+
+            <!-- Selektor kategorii -->
+            <VerticalStackLayout Spacing="8">
+                <Label
+                    Text="Kategoria" />
+
+                <Picker x:Name="KategoriaPicker">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Procesory</x:String>
+                            <x:String>Płyte główne</x:String>
+                            <x:String>Telifony</x:String>
+                            <x:String>Karty Graficzne</x:String>
+                            <x:String>Dyski SSD</x:String>
+                            <x:String>Pamięci RAM</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </VerticalStackLayout>
+
+            <!-- Swich -->
+            <HorizontalStackLayout>
+                <Switch x:Name="AwaliableSwtich" HeightRequest="45" />
+                <Label Text="Produkt dostępny" VerticalOptions="Center" />
+            </HorizontalStackLayout>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="2" Grid.Column="0" Spacing="10" Margin="0,0,0,10">
-            <Label
-                Text="Cena" />
-            
-            <Entry
-                HeightRequest="50"
-                x:Name="Cena"
-                Placeholder="0"
-                Keyboard="Numeric" />
-        </VerticalStackLayout>
-
-        <VerticalStackLayout Grid.Row="3" Grid.Column="0" Spacing="10" Margin="0,0,0,10">
-            <Label
-                Text="Kategoria" />
-
-            <Picker x:Name="KategoriaPicker">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Procesory</x:String>
-                        <x:String>Płyte główne</x:String>
-                        <x:String>Telifony</x:String>
-                        <x:String>Karty Graficzne</x:String>
-                        <x:String>Dyski SSD</x:String>
-                        <x:String>Pamięci RAM</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-        </VerticalStackLayout>
-
-        <HorizontalStackLayout Grid.Row="4" Grid.Column="0">
-            <Switch x:Name="AwaliableSwtich" HeightRequest="50" />
-            <Label Text="Produkt dostępny" VerticalOptions="Center" />
-        </HorizontalStackLayout>
-
+        <!-- Przycisk -->
         <Button
-            Text="Dodaj produkt"
             Grid.Row="5"
-            Grid.Column="0"
+            Text="Dodaj produkt"
             VerticalOptions="End"
             HeightRequest="50" />
     </Grid>
-   
-    
+
+
     <!-- "<VerticalStackLayout>
         <Label 
             Text="Nowy produkt"
