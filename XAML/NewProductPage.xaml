@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XAML.NewProductPage"
              Title="NewProductPage">
-    <Grid Padding="20" RowSpacing="10" ColumnSpacing="8">
+    <Grid Padding="20" RowSpacing="8" ColumnSpacing="8">
         <!-- Definicja wierszy sietki grid -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -12,6 +12,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -40,6 +41,7 @@
             Grid.Row="1"
             Grid.Column="1"
             x:Name="Nazwa"
+            TextChanged="WprowadzonoLitere"
             HeightRequest="50"
             Placeholder="Wpisz nazwę produktu" />
 
@@ -67,6 +69,7 @@
             Grid.Row="3"
             Grid.Column="1"
             HeightRequest="50"
+            SelectedIndexChanged="ZminaKategorii"
             x:Name="KategoriaPicker">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -84,11 +87,13 @@
         <Label
             Grid.Row="4"
             Grid.Column="0"
+            x:Name="Dostempnosc"
             Text="Produkt dostępny" />
         <Switch
             Grid.Row="4"
             Grid.Column="1"
             HorizontalOptions="Start"
+            Toggled="ZmianaSwicza"
             x:Name="AwaliableSwtich" />
 
         <!-- Przyciski -->
@@ -109,6 +114,7 @@
             Clicked="Reset"/>
 
         <Label Grid.Row="6" x:Name="Labelka" />
+        <Label Grid.Row="7" x:Name="EtykietaWyniku" />
     </Grid>
 
 
