@@ -11,26 +11,52 @@ public partial class NewProductPage : ContentPage
 
     private void NowyProdukt(object sender, EventArgs e)
     {
-        licznik++;
+        //licznik++;
+        //EtykietaWyniku.Text = $"Kliknieto razy: {licznik}";
 
-        Labelka.Text = $"Kliknieto razy: {licznik}";
+        string? nazwa = Nazwa.Text;
+        if (string.IsNullOrEmpty(nazwa))
+        {
+            EtykietaWyniku.Text = "Niwprowadzino nazwy!";
+            return;
+        }
+
+        if (!double.TryParse(Cena.Text, out double cena)) {
+            EtykietaWyniku.Text = "Niepodana ceny";
+            return;
+        }
+
+        if (!int.TryParse(Ilosc.Text, out int ilocs))
+        {
+            EtykietaWyniku.Text = "Niepodana ilosc";
+            return;
+        }
+
+        if (KategoriaPicker.SelectedItem == null)
+        {
+            EtykietaWyniku.Text = "Nie wybrano kategorii!";
+            return;
+        }
+
+        double wartosc = ilocs * cena;
+        EtykietaWyniku.Text = $"Produkt: {nazwa}, cena: {cena}, ilosc: {ilocs}, kategoria: {KategoriaPicker.SelectedItem}, wartosc: {wartosc} zł";
     }
 
     private void Reset(object sender, EventArgs e)
     {
         licznik = 0;
 
-        Labelka.Text = $"Kliknieto zero razy";
+        EtykietaWyniku.Text = $"Kliknieto zero razy";
     }
 
     private void WprowadzonoLitere(object sender, TextChangedEventArgs e)
     {
-        EtykietaWyniku.Text = $"Nazwa ma {Nazwa.Text.Length} znaków";
+        //EtykietaWyniku.Text = $"Nazwa ma {Nazwa.Text.Length} znaków";
     }
 
     private void ZmianaSwicza(object sender, ToggledEventArgs e)
     {
-        if (e.Value)
+        if (AwaliableSwtich.IsToggled)
         {
             Dostempnosc.Text = "Produkt dostępny";
         }
