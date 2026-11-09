@@ -44,9 +44,11 @@ public partial class NewProductPage : ContentPage
 
     private void Reset(object sender, EventArgs e)
     {
-        licznik = 0;
-
-        EtykietaWyniku.Text = $"Kliknieto zero razy";
+        Nazwa.Text = "";
+        Cena.Text = "";
+        Ilosc.Text = "";
+        KategoriaPicker.SelectedItem = null;
+        AwaliableSwtich.IsToggled = false;
     }
 
     private void WprowadzonoLitere(object sender, TextChangedEventArgs e)
@@ -68,7 +70,10 @@ public partial class NewProductPage : ContentPage
 
     private void ZminaKategorii(object sender, EventArgs e)
     {
-        EtykietaWyniku.Text = KategoriaPicker.SelectedItem.ToString();
+        if (KategoriaPicker.SelectedItem != null)
+        {
+            EtykietaWyniku.Text = KategoriaPicker.SelectedItem.ToString();
+        }
     }
 
     private void Cena_TextChanged(object sender, TextChangedEventArgs e)
