@@ -14,6 +14,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -57,7 +58,8 @@
             x:Name="Cena"
             HeightRequest="50"
             Placeholder="0"
-            Keyboard="Numeric" />
+            Keyboard="Numeric"
+            TextChanged="Cena_TextChanged"/>
 
         <!-- Entry ilocs -->
         <Label
@@ -71,7 +73,8 @@
             x:Name="Ilosc"
             HeightRequest="50"
             Placeholder="0"
-            Keyboard="Numeric" />
+            Keyboard="Numeric"
+            TextChanged="Cena_TextChanged"/>
 
         <!-- Selektor kategorii -->
         <Label
@@ -127,7 +130,8 @@
             HeightRequest="55"
             Clicked="Reset" />
 
-        <Label Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" x:Name="EtykietaWyniku" />
+        <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" x:Name="EtykietaWyniku" />
+        <Label Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" x:Name="NowaEtykietaWyniku" />
     </Grid>
 
 

@@ -70,4 +70,34 @@ public partial class NewProductPage : ContentPage
     {
         EtykietaWyniku.Text = KategoriaPicker.SelectedItem.ToString();
     }
+
+    private void Cena_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        Entry s = (Entry)sender;
+        if (double.TryParse(s.Text, out double wartosc))
+        {
+            if (wartosc < 0)
+            {
+                s.Background = Colors.Red;
+            }
+            else
+            {
+                s.Background = Colors.Green;
+            }
+        }
+
+        if (!double.TryParse(Cena.Text, out double cena))
+        {
+            NowaEtykietaWyniku.Text = "Niepodana ceny";
+            return;
+        }
+
+        if (!int.TryParse(Ilosc.Text, out int ilocs))
+        {
+            NowaEtykietaWyniku.Text = "Niepodana ilosc";
+            return;
+        }
+
+        NowaEtykietaWyniku.Text = $"Wartosc: {cena * ilocs}";
+    }
 }
